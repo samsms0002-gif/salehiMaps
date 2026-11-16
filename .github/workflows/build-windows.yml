@@ -1,0 +1,28 @@
+name: Build Windows app
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt pyinstaller
+      - name: Build executable
+        run: pyinstaller --noconfirm --clean --windowed --onefile --name OfflineMapsViewer map_viewer.py
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: OfflineMapsViewer-windows
+          path: dist/OfflineMapsViewer.exe
+          if-no-files-found: error

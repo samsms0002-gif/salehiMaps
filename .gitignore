@@ -1,0 +1,17 @@
+# User map cache and Android application data (may contain gigabytes)
+/files/
+
+# Python and build output
+__pycache__/
+*.py[cod]
+*.spec
+/build/
+/dist/
+/.venv/
+/venv/
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
