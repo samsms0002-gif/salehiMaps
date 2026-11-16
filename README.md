@@ -27,8 +27,10 @@ py map_viewer.py
 
 - تنزيل المشروع (ZIP): <https://github.com/samsms0002-gif/OfflineMapsViewer/archive/refs/heads/main.zip>
 - استنساخ المستودع: `git clone https://github.com/samsms0002-gif/OfflineMapsViewer.git`
+- تنزيل EXE جاهز: <https://github.com/samsms0002-gif/OfflineMapsViewer/releases/latest/download/OfflineMapsViewer.exe>
+- أحدث إصدار: <https://github.com/samsms0002-gif/OfflineMapsViewer/releases/latest>
 - التحزيم التلقائي (GitHub Actions): <https://github.com/samsms0002-gif/OfflineMapsViewer/actions/workflows/build-windows.yml>
-- تنزيل EXE: افتح آخر تشغيل ناجح في صفحة Actions ثم نزّل `OfflineMapsViewer-windows` من قسم Artifacts.
+- تنزيل من Artifacts: افتح آخر تشغيل ناجح في صفحة Actions ثم نزّل `OfflineMapsViewer-windows`.
 
 ## الميزات
 
