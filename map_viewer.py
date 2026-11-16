@@ -1,4 +1,4 @@
-"""OfflineMaps library viewer. Displays image previews and standard raster maps."""
+"""salehiMaps viewer. Displays image previews and standard raster maps."""
 from __future__ import annotations
 
 import os
@@ -15,7 +15,7 @@ from PIL import ImageEnhance
 from PIL import Image, ImageTk
 
 
-APP_TITLE = "عارض خرائط OfflineMaps"
+APP_TITLE = "salehiMaps"
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}
 PREVIEW_EXT = ".PREVIEW"
 
@@ -76,7 +76,7 @@ class MapViewer:
         outer.pack(fill="both", expand=True)
         toolbar = ttk.Frame(outer, style="Panel.TFrame", padding=8)
         toolbar.pack(fill="x", pady=(0, 9))
-        ttk.Label(toolbar, text="عارض خرائط OfflineMaps", style="Title.TLabel").pack(side="right", padx=10)
+        ttk.Label(toolbar, text="salehiMaps", style="Title.TLabel").pack(side="right", padx=10)
         ttk.Button(toolbar, text="اختيار مجلد الخرائط", command=self.choose_folder).pack(side="right", padx=4)
         ttk.Button(toolbar, text="فتح صورة", command=self.open_image).pack(side="right", padx=4)
         ttk.Button(toolbar, text="انتقال إلى إحداثيات", command=self.goto_coordinates).pack(side="right", padx=4)
@@ -314,14 +314,14 @@ class MapViewer:
             self.status.set(f"تم حفظ الصورة: {filename}")
 
     def save_workspace(self):
-        filename=filedialog.asksaveasfilename(title="حفظ جلسة العمل",defaultextension=".omw",filetypes=[("OfflineMaps Workspace","*.omw"),("JSON","*.json")])
+        filename=filedialog.asksaveasfilename(title="حفظ جلسة العمل",defaultextension=".omw",filetypes=[("salehiMaps Workspace","*.omw"),("JSON","*.json")])
         if not filename: return
         state={"version":1,"folder":self.map_root.get(),"visible":[self.records[int(i)]["name"] for i in self.visible if int(i)<len(self.records)],"zoom":self.zoom,"offset":[self.offset_x,self.offset_y],"landmarks":self.landmarks}
         Path(filename).write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
         self.status.set(f"تم حفظ جلسة العمل: {filename}")
 
     def load_workspace(self):
-        filename=filedialog.askopenfilename(title="فتح جلسة عمل",filetypes=[("OfflineMaps Workspace","*.omw *.json"),("كل الملفات","*.*")])
+        filename=filedialog.askopenfilename(title="فتح جلسة عمل",filetypes=[("salehiMaps Workspace","*.omw *.json"),("كل الملفات","*.*")])
         if not filename: return
         try:
             state=json.loads(Path(filename).read_text(encoding="utf-8")); folder=Path(state.get("folder",""))
@@ -333,7 +333,7 @@ class MapViewer:
         except Exception as exc: messagebox.showerror(APP_TITLE,f"تعذر فتح جلسة العمل: {exc}")
 
     def _favorite_file(self):
-        path=Path.home()/".offlinemapsviewer"/"favorites.json"; path.parent.mkdir(parents=True,exist_ok=True); return path
+        path=Path.home()/".salehimaps"/"favorites.json"; path.parent.mkdir(parents=True,exist_ok=True); return path
 
     def _restore_favorites(self):
         try: self.favorites=json.loads(self._favorite_file().read_text(encoding="utf-8"))
@@ -366,7 +366,7 @@ class MapViewer:
               "المعايرة: معاينات AQX تستخدم إحداثيات preview-location من ملف AQX. الصور الأخرى تحتاج ملف world file مثل .jgw أو .pgw.\n"
               "القيود الحالية: ملفات DAT/IDX وDEM الخاصة غير مفكوكة؛ لا يوجد GPS/بوصلة أو تنزيل بلاطات أو بحث أسماء أماكن أو تحليل ارتفاعات.\n\n"
               "المساعدة الرسمية للتطبيق: https://www.offline-maps.net/en/help")
-        messagebox.showinfo("مساعدة عارض OfflineMaps",text)
+        messagebox.showinfo("مساعدة salehiMaps",text)
 
     # Preview positions in AQX are latitude,longitude,zoom. This is a display
     # reference, not a claim that the proprietary cache has been georeferenced.
@@ -616,7 +616,7 @@ class MapViewer:
             return
         filename = filedialog.asksaveasfilename(title="تصدير المعالم", defaultextension=".gpx", filetypes=[("GPX", "*.gpx"), ("KML", "*.kml")])
         if not filename: return
-        root = ET.Element("gpx", {"version":"1.1","creator":"OfflineMapsViewer","xmlns":"http://www.topografix.com/GPX/1/1"})
+        root = ET.Element("gpx", {"version":"1.1","creator":"salehiMaps","xmlns":"http://www.topografix.com/GPX/1/1"})
         for item in self.landmarks:
             if item["type"] == "wpt":
                 lat,lon=item["points"][0]; w=ET.SubElement(root,"wpt",{"lat":str(lat),"lon":str(lon)}); ET.SubElement(w,"name").text=item["name"]

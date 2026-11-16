@@ -1,4 +1,4 @@
-# عارض مكتبة OfflineMaps
+# salehiMaps
 
 مشروع سطح مكتب بسيط لعرض صور الخرائط والمعاينات، وإدارة طبقات الصور والمعالم. واجهة البرنامج بالعربية.
 
@@ -21,16 +21,16 @@ py map_viewer.py
 
 ## بناء تطبيق Windows
 
-على Windows انقر مرتين على `build_windows.bat` أو شغّله من PowerShell. يظهر الناتج في `dist/OfflineMapsViewer.exe`. يمكن أيضاً تشغيل Workflow البناء من صفحة Actions في GitHub لتنزيل نسخة Windows.
+على Windows انقر مرتين على `build_windows.bat` أو شغّله من PowerShell. يظهر الناتج في `dist/salehiMaps.exe`. يمكن أيضاً تشغيل Workflow البناء من صفحة Actions في GitHub لتنزيل نسخة Windows.
 
 ## التنزيل والتحزيم
 
-- تنزيل المشروع (ZIP): <https://github.com/samsms0002-gif/OfflineMapsViewer/archive/refs/heads/main.zip>
-- استنساخ المستودع: `git clone https://github.com/samsms0002-gif/OfflineMapsViewer.git`
-- تنزيل EXE جاهز: <https://github.com/samsms0002-gif/OfflineMapsViewer/releases/latest/download/OfflineMapsViewer.exe>
-- أحدث إصدار: <https://github.com/samsms0002-gif/OfflineMapsViewer/releases/latest>
-- التحزيم التلقائي (GitHub Actions): <https://github.com/samsms0002-gif/OfflineMapsViewer/actions/workflows/build-windows.yml>
-- تنزيل من Artifacts: افتح آخر تشغيل ناجح في صفحة Actions ثم نزّل `OfflineMapsViewer-windows`.
+- تنزيل المشروع (ZIP): <https://github.com/samsms0002-gif/salehiMaps/archive/refs/heads/main.zip>
+- استنساخ المستودع: `git clone https://github.com/samsms0002-gif/salehiMaps.git`
+- تنزيل EXE جاهز: <https://github.com/samsms0002-gif/salehiMaps/releases/latest/download/salehiMaps.exe>
+- أحدث إصدار: <https://github.com/samsms0002-gif/salehiMaps/releases/latest>
+- التحزيم التلقائي (GitHub Actions): <https://github.com/samsms0002-gif/salehiMaps/actions/workflows/build-windows.yml>
+- تنزيل من Artifacts: افتح آخر تشغيل ناجح في صفحة Actions ثم نزّل `salehiMaps-windows`.
 
 ## الميزات
 

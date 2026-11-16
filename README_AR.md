@@ -1,8 +1,8 @@
-# عارض مكتبة OfflineMaps لويندوز
+# salehiMaps لويندوز
 
 ## التشغيل وإنشاء EXE
 
-يتطلب Python 3.10 أو أحدث على ويندوز. شغّل `py -m pip install -r requirements.txt` ثم `py map_viewer.py`. لإنشاء تطبيق مستقل شغّل `build_windows.bat`؛ يضع PyInstaller الناتج في `dist\OfflineMapsViewer.exe`. اختر مجلد `files/datastore/maps` عند فتح العارض. لا يضم EXE بيانات الخرائط البالغ حجمها نحو 1.8 GB.
+يتطلب Python 3.10 أو أحدث على ويندوز. شغّل `py -m pip install -r requirements.txt` ثم `py map_viewer.py`. لإنشاء تطبيق مستقل شغّل `build_windows.bat`؛ يضع PyInstaller الناتج في `dist\salehiMaps.exe`. اختر مجلد `files/datastore/maps` عند فتح العارض. لا يضم EXE بيانات الخرائط البالغ حجمها نحو 1.8 GB.
 
 ## ما ينفذه العارض
 
