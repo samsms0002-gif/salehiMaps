@@ -36,7 +36,7 @@ class MapViewer:
         self.root.geometry("1280x800")
         self.root.minsize(850, 550)
         self.root.configure(bg="#101923")
-        self.root.option_add("*Font", "Segoe UI 10")
+        self.root.option_add("*Font", "{Segoe UI} 10")
         self.map_root = tk.StringVar()
         self.status = tk.StringVar(value="اختر مجلد الخرائط أو افتح صورة خريطة")
         self.opacity = tk.DoubleVar(value=55)
